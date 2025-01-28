@@ -1,0 +1,55 @@
+@charset 'UTF-8';
+body {
+    font-size: 100%;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+    text-align: center;
+}
+h2 {
+    margin: 2rem;
+}
+
+.list-drink {
+    display: flex;
+    gap: 1rem;
+    /* grid-template-columns: 2fr 2fr; */
+    justify-content: center;
+    list-style: none;
+    margin: auto;
+}
+.content-drink {
+    margin: auto;
+    padding: 30px;
+}
+.content-fruits {
+    display: flex;
+    background-color: bisque;
+    justify-content: space-around;
+    margin: 10px;
+}
+/* 証券取引所遊び...参考：https://cdg-blog.jp/css_ticker/ */
+.ticker {
+    white-space:nowrap;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.ticker ul {
+    display: flex;
+    align-items: center;
+    animation: ticker 20s linear infinite;
+}
+.ticker li {
+    margin-right: 20px;
+    list-style: none;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
