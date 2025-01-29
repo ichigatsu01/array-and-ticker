@@ -20,7 +20,7 @@ fruits = {　//オブジェクトリテラル
 let textArea = "";
 const contentFruits = document.querySelector('.content-fruits')
 for (const key in fruits) {
-    textArea += `<p>${key}の値段は${fruits[key]}円です！</p>`
+    textArea += `<p>${key}の値段は${fruits[key]}円です！<br><img src="./img/fruit.png" alt=""></p>`
 };
 contentFruits.insertAdjacentHTML('beforeend', textArea);
 
@@ -50,3 +50,25 @@ foods = [ //配列に格納したオブジェクト
         img: './img/img4.png',
     },
 ];
+
+// ローディング画面を追加
+const loadingAreaLeft = document.querySelector('#loading-left');
+const loadingAreaRight = document.querySelector('#loading-right');
+const keyframesLeft = {
+    translate: [0, '-100vw'],
+};
+const keyframesRight = {
+    translate: [0, '100vw'],
+};
+const options = {
+    duration: 800,
+    easing: 'ease-in',
+    delay: 800,
+    fill: 'forwards',
+};
+window.addEventListener('load', () => {
+    // ローディング中（左）
+    loadingAreaLeft.animate(keyframesLeft, options)
+    // ローディング中（右）
+    loadingAreaRight.animate(keyframesRight, options)
+});
